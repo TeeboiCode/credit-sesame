@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Sesame – Reports (Mock)</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons (Font Awesome) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="phone">
+      <!-- Top browser-ish bar -->
+      <div class="browserbar" aria-hidden="true">
+        <div class="browserbar__left">
+          <i class="fa-regular fa-message"></i>
+        </div>
+        <div class="browserbar__url">secured.creditsesame.com</div>
+        <div class="browserbar__right">
+          <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        </div>
+      </div>
+
+      <!-- App header -->
+      <header class="header">
+        <button class="iconbtn" aria-label="Menu">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+
+        <div class="brand" aria-label="Credit Sesame">
+          <span class="brand__credit">credit</span>
+          <span class="brand__sesame">sesame</span>
+          <span class="brand__seed" aria-hidden="true"></span>
+        </div>
+
+        <div class="header__right">
+          <button class="iconbtn iconbtn--dot" aria-label="Notifications">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+          <a class="cta" href="#" role="button">Continue in App</a>
+        </div>
+      </header>
+
+      <!-- Tabs -->
+      <nav class="tabs" aria-label="Primary">
+        <a class="tab" href="#">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+        <a class="tab" href="#">
+          <i class="fa-regular fa-rectangle-list"></i>
+          <span>Goals</span>
+        </a>
+        <a class="tab tab--active" href="#" aria-current="page">
+          <i class="fa-solid fa-chart-column"></i>
+          <span>Reports</span>
+        </a>
+        <a class="tab" href="#">
+          <i class="fa-regular fa-credit-card"></i>
+          <span>Cards</span>
+        </a>
+        <a class="tab" href="#">
+          <i class="fa-solid fa-sack-dollar"></i>
+          <span>Loans</span>
+        </a>
+      </nav>
+
+      <main class="content">
+        <!-- Report/Accounts Tabs -->
+        <nav class="report-tabs" aria-label="Report navigation">
+          <a class="report-tab report-tab--active" href="#" aria-current="page">Report</a>
+          <a class="report-tab" href="#">Accounts</a>
+        </nav>
+
+        <!-- Credit Score Display -->
+        <section class="credit-score-section">
+          <div class="credit-score-header">
+            <div class="credit-score-label">Credit Score</div>
+            <div class="credit-score-meta">
+              <div class="credit-score-updated">Updated Daily</div>
+              <div class="credit-score-bureau">
+                <span class="bureau__name bureau__name--tu">TransUnion</span>
+                <span class="bureau__badge">tu</span>
+              </div>
+            </div>
+          </div>
+          <div class="credit-score-value">553</div>
+        </section>
+
+        <!-- Credit Score Chart -->
+        <section class="chart-section">
+          <div class="chart-container">
+            <svg class="chart" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid meet">
+              <!-- Y-axis labels -->
+              <text x="25" y="25" class="chart-label">597</text>
+              <text x="25" y="55" class="chart-label">567</text>
+              <text x="25" y="85" class="chart-label">547</text>
+              <text x="25" y="115" class="chart-label">527</text>
+              
+              <!-- X-axis labels -->
+              <text x="60" y="200" class="chart-label">Sep</text>
+              <text x="110" y="200" class="chart-label">Oct</text>
+              <text x="160" y="200" class="chart-label">Nov</text>
+              <text x="210" y="200" class="chart-label">Dec</text>
+              <text x="260" y="200" class="chart-label">Jan</text>
+              <text x="310" y="200" class="chart-label">Feb</text>
+              <text x="50" y="215" class="chart-label-small">YEAR (2025,2026)</text>
+              
+              <!-- Grid lines -->
+              <line x1="50" y1="25" x2="350" y2="25" stroke="#e5e7eb" stroke-width="1"/>
+              <line x1="50" y1="55" x2="350" y2="55" stroke="#e5e7eb" stroke-width="1"/>
+              <line x1="50" y1="85" x2="350" y2="85" stroke="#e5e7eb" stroke-width="1"/>
+              <line x1="50" y1="115" x2="350" y2="115" stroke="#e5e7eb" stroke-width="1"/>
+              <line x1="50" y1="145" x2="350" y2="145" stroke="#e5e7eb" stroke-width="1"/>
+              
+              <!-- Shaded area under line -->
+              <path d="M 60 115 L 110 85 L 160 25 L 210 55 L 260 85 L 310 85 L 310 145 L 60 145 Z" 
+                    fill="#fef3c7" fill-opacity="0.4"/>
+              
+              <!-- Trend line -->
+              <polyline points="60,115 110,85 160,25 210,55 260,85 310,85" 
+                        fill="none" stroke="#f1c232" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              
+              <!-- Data points -->
+              <circle cx="60" cy="115" r="4.5" fill="#fff" stroke="#f1c232" stroke-width="2"/>
+              <circle cx="110" cy="85" r="4.5" fill="#fff" stroke="#f1c232" stroke-width="2"/>
+              <circle cx="160" cy="25" r="4.5" fill="#fff" stroke="#f1c232" stroke-width="2"/>
+              <circle cx="210" cy="55" r="4.5" fill="#fff" stroke="#f1c232" stroke-width="2"/>
+              <circle cx="260" cy="85" r="4.5" fill="#fff" stroke="#f1c232" stroke-width="2"/>
+              <circle cx="310" cy="85" r="4.5" fill="#fff" stroke="#f1c232" stroke-width="2"/>
+            </svg>
+          </div>
+        </section>
+
+        <!-- Action Cards -->
+        <section class="action-cards">
+          <a href="#" class="action-card">
+            <span>See what's changed</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+          <a href="#" class="action-card">
+            <span>Credit Report Lock<span class="action-card__dot"></span></span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </section>
+
+        <!-- Date card -->
+        <section class="card">
+          <div class="field">
+            <div class="field__label">Credit Report Date</div>
+            <button class="field__value" type="button" aria-label="Select credit report date">
+              <span>February 3, 2026</span>
+              <span class="field__caret" aria-hidden="true">
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Scores row -->
+        <section class="scores" aria-label="Scores">
+          <article class="scorecard">
+            <div class="gauge gauge--tu" aria-label="TransUnion score 688 good">
+              <div class="gauge__inner">
+                <div class="gauge__score">688</div>
+                <div class="gauge__rating">GOOD</div>
+              </div>
+            </div>
+            <div class="range">
+              <span>300</span>
+              <span>850</span>
+            </div>
+            <div class="bureau">
+              <span class="bureau__name bureau__name--tu">TransUnion</span>
+              <span class="bureau__badge">tu</span>
+            </div>
+            <div class="muted">Updated 2/1</div>
+            <div class="muted">Refreshed Daily</div>
+          </article>
+
+          <article class="scorecard">
+            <div class="gauge gauge--locked" aria-label="Equifax locked score">
+              <div class="gauge__inner">
+                <div class="gauge__plus" aria-hidden="true">+</div>
+              </div>
+            </div>
+            <div class="range">
+              <span>300</span>
+              <span>850</span>
+            </div>
+            <div class="bureau bureau--center">
+              <span class="bureau__name bureau__name--eq">EQUIFAX</span>
+            </div>
+            <div class="muted">Upgrade to Sesame+</div>
+            <a class="link" href="#">Add Score</a>
+          </article>
+
+          <article class="scorecard">
+            <div class="gauge gauge--locked" aria-label="Experian locked score">
+              <div class="gauge__inner">
+                <div class="gauge__plus" aria-hidden="true">+</div>
+              </div>
+            </div>
+            <div class="range">
+              <span>300</span>
+              <span>850</span>
+            </div>
+            <div class="bureau bureau--center">
+              <span class="bureau__name bureau__name--ex">experian</span>
+            </div>
+            <div class="muted">Upgrade to Sesame+</div>
+            <a class="link" href="#">Add Score</a>
+          </article>
+        </section>
+
+        <div class="vantage muted">My VantageScore® 3.0</div>
+
+        <!-- Collapsible-style header -->
+        <section class="card card--wide">
+          <div class="sectionhead">
+            <button class="sectionhead__toggle" type="button" aria-label="Collapse Credit Care Center">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <div class="sectionhead__title">Credit Care Center</div>
+            <button class="sectionhead__help" type="button" aria-label="Help">
+              <i class="fa-solid fa-question"></i>
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <!-- Floating accessibility button -->
+      <button class="fab" type="button" aria-label="Accessibility options">
+        <i class="fa-solid fa-universal-access"></i>
+      </button>
+    </div>
+  </body>
+</html>
+

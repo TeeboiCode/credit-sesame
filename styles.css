@@ -1,0 +1,702 @@
+:root {
+  --bg: #f3f5f8;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --blue: #1777e6;
+  --blue-2: #0f5fbf;
+  --yellow: #f1c232;
+  --danger: #e11d48;
+  --shadow: 0 6px 20px rgba(17, 24, 39, 0.08);
+  --radius: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(#ffffff 0, #ffffff 28px, var(--bg) 28px);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.phone {
+  width: min(428px, 100vw);
+  height: min(926px, 100vh);
+  margin: 0 auto;
+  overflow: auto;
+  position: relative;
+  background: var(--bg);
+}
+
+/* Browser bar */
+.browserbar {
+  height: 42px;
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
+  align-items: center;
+  padding: 0 10px;
+  background: #fff;
+}
+
+.browserbar__url {
+  justify-self: center;
+  font-weight: 600;
+  color: #111827;
+  opacity: 0.85;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.browserbar__left,
+.browserbar__right {
+  display: grid;
+  place-items: center;
+  color: #6b7280;
+}
+
+/* App header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.iconbtn {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  color: #1f2937;
+  cursor: pointer;
+  position: relative;
+}
+
+.iconbtn:focus-visible {
+  outline: 3px solid rgba(23, 119, 230, 0.25);
+  outline-offset: 2px;
+}
+
+.iconbtn--dot::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background: var(--danger);
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.hamburger {
+  width: 18px;
+  height: 2px;
+  background: #1f2937;
+  border-radius: 999px;
+  position: relative;
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: #1f2937;
+  border-radius: 999px;
+}
+.hamburger::before {
+  top: -6px;
+}
+.hamburger::after {
+  top: 6px;
+}
+
+.brand {
+  position: relative;
+  justify-self: start;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 26px;
+  line-height: 1;
+  user-select: none;
+  padding-left: 4px;
+}
+
+.brand__credit {
+  color: #1373d6;
+  font-weight: 700;
+}
+.brand__sesame {
+  color: #1373d6;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.brand__seed {
+  position: absolute;
+  left: 57px;
+  top: -10px;
+  width: 8px;
+  height: 14px;
+  background: radial-gradient(circle at 35% 30%, #ffd54a, #f2b705);
+  border-radius: 999px;
+  transform: rotate(18deg);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 12px;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 6px 14px rgba(23, 119, 230, 0.25);
+}
+
+.cta:active {
+  transform: translateY(1px);
+}
+
+/* Tabs */
+.tabs {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  padding: 10px 6px 8px;
+}
+
+.tab {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  color: #6b7280;
+  font-size: 12px;
+  padding: 8px 0;
+  position: relative;
+}
+
+.tab i {
+  font-size: 18px;
+}
+
+.tab--active {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.tab--active::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: -8px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--blue);
+}
+
+/* Content */
+.content {
+  padding: 0 0 92px;
+}
+
+/* Report/Accounts Tabs */
+.report-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 20px;
+  padding: 0 12px;
+}
+
+.report-tab {
+  flex: 1;
+  padding: 14px 0;
+  text-align: center;
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+}
+
+.report-tab--active {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.report-tab--active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  background: var(--blue);
+  border-radius: 999px 999px 0 0;
+}
+
+/* Credit Score Section */
+.credit-score-section {
+  margin-bottom: 24px;
+  padding: 0 12px;
+}
+
+.credit-score-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.credit-score-label {
+  font-size: 16px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.credit-score-meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.credit-score-updated {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.credit-score-bureau {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.credit-score-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1f2937;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* Chart Section */
+.chart-section {
+  margin-bottom: 20px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 16px 24px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.chart-container {
+  width: 100%;
+  height: 220px;
+  overflow: visible;
+}
+
+.chart {
+  width: 100%;
+  height: 100%;
+}
+
+.chart-label {
+  font-size: 11px;
+  fill: #6b7280;
+  font-weight: 500;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.chart-label-small {
+  font-size: 9px;
+  fill: #9ca3af;
+  font-weight: 400;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* Action Cards */
+.action-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 0 12px;
+}
+
+.action-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.action-card:hover {
+  background: #f9fafb;
+}
+
+.action-card i {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.action-card__dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 0 12px 20px;
+}
+
+.card--wide {
+  border-radius: 12px;
+  box-shadow: none;
+  background: #fff;
+  margin-top: 14px;
+}
+
+.field {
+  padding: 14px;
+}
+
+.field__label {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.field__value {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+}
+
+.field__caret {
+  width: 44px;
+  height: 44px;
+  border-left: 1px solid #e5e7eb;
+  display: grid;
+  place-items: center;
+  color: #6b7280;
+}
+
+.scores {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  align-items: start;
+  padding: 0 12px;
+  justify-items: center;
+}
+
+.scorecard {
+  text-align: center;
+  background: transparent;
+  --gauge-size: 100px;
+}
+
+/* Circular gauge */
+.gauge {
+  width: var(--gauge-size);
+  height: var(--gauge-size);
+  margin: 0 auto 6px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  /* Default ring fill (used by the ::before ring) */
+  --gauge-ring: 12px;
+  --gauge-fill: conic-gradient(var(--yellow) 0deg 250deg, #e5e7eb 250deg 360deg);
+  background: transparent;
+}
+
+.gauge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--gauge-fill);
+  /* Make it a thick ring */
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--gauge-ring)), #000 0);
+  mask: radial-gradient(farthest-side, transparent calc(100% - var(--gauge-ring)), #000 0);
+}
+
+.gauge--tu {
+  /* Speedometer-style ~270° arc with bottom gap (like the demo image) */
+  --gauge-ring: 14px;
+  --gauge-fill:
+    /* track (grey) */
+    /* conic-gradient(from 225deg, #e5e7eb 0deg 270deg, transparent 270deg 360deg), */
+    /* colored arc (solid fill as requested) */
+    conic-gradient(
+      from 225deg,
+      #afdd6c 0deg,
+      #afdd6c 180deg,
+      transparent 180deg 360deg
+    );
+}
+
+.gauge--tu .gauge__rating {
+  color: #afdd6c;
+}
+
+.gauge--locked {
+  --gauge-fill: /* conic-gradient(from 225deg, #e5e7eb 0deg 270deg, transparent 270deg 360deg), */
+  conic-gradient(
+    from 225deg,
+    #e5e7eb 0deg,
+    #e5e7eb 270deg,
+    transparent 270deg 360deg
+  );
+}
+
+.gauge__inner {
+  width: calc(var(--gauge-size) - 16px);
+  height: calc(var(--gauge-size) - 16px);
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #eef2f7;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 18px rgba(17, 24, 39, 0.06) inset;
+  position: relative;
+  z-index: 1; /* keep content above the ::before ring */
+}
+
+.gauge__score {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+}
+
+.gauge__rating {
+  margin-top: -6px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #8b6b00;
+  letter-spacing: 0.06em;
+}
+
+.gauge__plus {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1;
+}
+
+.range {
+  display: flex;
+  justify-content: space-between;
+  color: #111827;
+  font-size: 13px;
+  width: var(--gauge-size, 132px); /* match gauge width so numbers sit under circle edges */
+  margin: 0 auto 6px;
+  padding: 0;
+}
+
+.bureau {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.bureau--center {
+  justify-content: center;
+}
+
+.bureau__name {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.bureau__name--tu {
+  color: #0ea5b7;
+}
+.bureau__name--eq {
+  color: #d61f26;
+  letter-spacing: 0.06em;
+}
+.bureau__name--ex {
+  color: #2d3b8f;
+  text-transform: lowercase;
+}
+
+.bureau__badge {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 12px;
+  color: #0ea5b7;
+  border: 2px solid rgba(14, 165, 183, 0.25);
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.link {
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.vantage {
+  text-align: center;
+  margin-top: 18px;
+}
+
+/* Credit care center bar */
+.sectionhead {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+  padding: 14px 10px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionhead__title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.sectionhead__toggle,
+.sectionhead__help {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: #374151;
+}
+
+.sectionhead__help {
+  justify-self: end;
+  background: #ef4444;
+  color: #fff;
+}
+
+/* Floating button */
+.fab {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  background: #1677ff;
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(17, 24, 39, 0.22);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  z-index: 1000;
+}
+
+/* Make it degrade nicely on very small devices */
+@media (max-width: 360px) {
+  .cta {
+    display: none;
+  }
+  .scorecard {
+    --gauge-size: 110px;
+  }
+  .field__value {
+    font-size: 22px;
+  }
+  .sectionhead__title {
+    font-size: 24px;
+  }
+}
+
