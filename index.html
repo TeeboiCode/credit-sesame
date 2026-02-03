@@ -100,7 +100,7 @@
               </div>
             </div>
           </div>
-          <div class="credit-score-value">553</div>
+          <div class="credit-score-value">688</div>
         </section>
 
         <!-- Credit Score Chart -->
@@ -108,10 +108,11 @@
           <div class="chart-container">
             <svg class="chart" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid meet">
               <!-- Y-axis labels -->
-              <text x="25" y="25" class="chart-label">597</text>
-              <text x="25" y="55" class="chart-label">567</text>
-              <text x="25" y="85" class="chart-label">547</text>
-              <text x="25" y="115" class="chart-label">527</text>
+              <text x="25" y="25" class="chart-label">700</text>
+              <text x="25" y="55" class="chart-label">670</text>
+              <text x="25" y="85" class="chart-label">640</text>
+              <text x="25" y="115" class="chart-label">610</text>
+              <text x="25" y="145" class="chart-label">580</text>
               
               <!-- X-axis labels -->
               <text x="60" y="200" class="chart-label">Sep</text>
@@ -129,21 +130,21 @@
               <line x1="50" y1="115" x2="350" y2="115" stroke="#e5e7eb" stroke-width="1"/>
               <line x1="50" y1="145" x2="350" y2="145" stroke="#e5e7eb" stroke-width="1"/>
               
-              <!-- Shaded area under line -->
-              <path d="M 60 115 L 110 85 L 160 25 L 210 55 L 260 85 L 310 85 L 310 145 L 60 145 Z" 
-                    fill="#fef3c7" fill-opacity="0.4"/>
+              <!-- Shaded area under line (fluctuating trend: 600->615->635->625->655->688) -->
+              <path d="M 60 125 L 110 110 L 160 90 L 210 100 L 260 70 L 310 37 L 310 145 L 60 145 Z" 
+                    fill="#afdd6c" fill-opacity="0.2"/>
               
-              <!-- Trend line -->
-              <polyline points="60,115 110,85 160,25 210,55 260,85 310,85" 
-                        fill="none" stroke="#f1c232" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Trend line (fluctuating trend with ups and downs, ending at 688) -->
+              <polyline points="60,125 110,110 160,90 210,100 260,70 310,37" 
+                        fill="none" stroke="#afdd6c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
               
-              <!-- Data points -->
-              <circle cx="60" cy="115" r="4.5" fill="#fff" stroke="#f1c232" stroke-width="2"/>
-              <circle cx="110" cy="85" r="4.5" fill="#fff" stroke="#f1c232" stroke-width="2"/>
-              <circle cx="160" cy="25" r="4.5" fill="#fff" stroke="#f1c232" stroke-width="2"/>
-              <circle cx="210" cy="55" r="4.5" fill="#fff" stroke="#f1c232" stroke-width="2"/>
-              <circle cx="260" cy="85" r="4.5" fill="#fff" stroke="#f1c232" stroke-width="2"/>
-              <circle cx="310" cy="85" r="4.5" fill="#fff" stroke="#f1c232" stroke-width="2"/>
+              <!-- Data points (Sep:600, Oct:615, Nov:635, Dec:625, Jan:655, Feb:688) -->
+              <circle cx="60" cy="125" r="4.5" fill="#fff" stroke="#afdd6c" stroke-width="2"/>
+              <circle cx="110" cy="110" r="4.5" fill="#fff" stroke="#afdd6c" stroke-width="2"/>
+              <circle cx="160" cy="90" r="4.5" fill="#fff" stroke="#afdd6c" stroke-width="2"/>
+              <circle cx="210" cy="100" r="4.5" fill="#fff" stroke="#afdd6c" stroke-width="2"/>
+              <circle cx="260" cy="70" r="4.5" fill="#fff" stroke="#afdd6c" stroke-width="2"/>
+              <circle cx="310" cy="37" r="4.5" fill="#fff" stroke="#afdd6c" stroke-width="2"/>
             </svg>
           </div>
         </section>
